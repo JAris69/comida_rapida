@@ -1,4 +1,4 @@
 package com.app.comidarapida.service.interfaces.user;
 
-public interface UserInterface {
+public interface UserServiceInterface {
 }

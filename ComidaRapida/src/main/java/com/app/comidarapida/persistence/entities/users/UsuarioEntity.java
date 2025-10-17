@@ -23,8 +23,8 @@ public class UsuarioEntity {
     @Column(name = "nombre_usuario", nullable = false, unique = true)
     private String nombreUsuario;
 
-    @Column(name = "contrasena", nullable = false)
-    private String contrasena;
+    @Column(name = "password", nullable = false)
+    private String password;
 
     @Enumerated(EnumType.STRING)
     @Column(name = "estado")
@@ -34,8 +34,8 @@ public class UsuarioEntity {
     @Column(name = "estado_log", nullable = false)
     private EstadoLog estadoLog;
 
-    //@OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL, orphanRemoval = true)
-    //private List<UsuarioRolEntity> usuarioRoleEntities;
+    @OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<UsuarioRolEntity> usuarioRoleEntities;
 
     @Column(name = "created_at")
     private LocalDateTime createdAt;
